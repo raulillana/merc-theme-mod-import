@@ -9,7 +9,8 @@
 	> License: GPLv3 or later
 	> License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-## Mercenary Theme Modifications Automatic Importer
+
+## Description
 
 	Mercenary Parent Theme Modifications Automatic Importer for Custom Child Themes.
 
