@@ -1,13 +1,13 @@
 # Mercenary Theme Modifications Automatic Importer
 
-> Contributors: raulillana, WPmercs
-> Tags: theme modifications, parent theme, child theme, modifications, importer, automatic importer, WPmercs, mercenary
-> Donate link: http://example.com/
-> Requires at least: 4.7
-> Tested up to: 4.8
-> Stable tag: trunk
-> License: GPLv3 or later
-> License URI: http://www.gnu.org/licenses/gpl-3.0.html
+`Contributors: raulillana, WPmercs
+Tags: theme modifications, parent theme, child theme, modifications, importer, automatic importer, WPmercs, mercenary
+Donate link: http://example.com/
+Requires at least: 4.7
+Tested up to: 4.8
+Stable tag: trunk
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html`
 
 ## Description
 
