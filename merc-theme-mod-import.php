@@ -4,7 +4,7 @@ Plugin Name: Mercenary Theme Modifications Automatic Importer
 Plugin URI:  https://wpmercs.com/plugins/merc-theme-mod-import/
 Description: Mercenary Parent Theme Modifications Automatic Importer for Custom Child Themes
 Version:     1.0
-Author:      raulillana, WPmercs
+Author:      raulillana, wpmercs
 Author URI:  https://wpmercs.com/about-us/
 License:     GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
