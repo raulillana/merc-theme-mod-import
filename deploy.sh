@@ -4,25 +4,25 @@
 
 # main config
 PLUGINSLUG="merc-theme-mod-import"
-CURRENTDIR="REPOS/_OficialWordPress/"
+CURRENTDIR="/Volumes/REPOS/_OficialWordPress/"
 MAINFILE="$PLUGINSLUG.php" # this should be the name of your main php file in the wordpress plugin
 
 # git config
-GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
+GITPATH="$CURRENTDIR/$PLUGINSLUG/" # this file should be in the base of your git repository
 
 # svn config
-SVNPATH="REPOS/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
+SVNPATH="REPOS/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and dont add trunk.
 SVNURL="http://plugins.svn.wordpress.org/$PLUGINSLUG/" # Remote SVN repo on wordpress.org, with trailing slash
 SVNUSER="raulillana" # your svn username
 
 
 # Let's begin...
 echo ".........................................."
-echo 
+echo
 echo "Preparing to deploy your Mercenary WordPress Plugin"
-echo 
+echo
 echo ".........................................."
-echo 
+echo
 
 # Check if subversion is installed before getting all worked up
 if ! which svn >/dev/null; then
@@ -37,14 +37,14 @@ echo "readme.txt version: $NEWVERSION1"
 NEWVERSION2=`grep "^Version:" $GITPATH/$MAINFILE | awk -F' ' '{print $NF}'`
 echo "$MAINFILE version: $NEWVERSION2"
 
-if [ "$NEWVERSION1" != "$NEWVERSION2" ]; then echo "Version in readme.txt & $MAINFILE don't match. Exiting...."; exit 1; fi
+if [ "$NEWVERSION1" != "$NEWVERSION2" | $NEWVERSION1 = 'trunk' ]; then echo "Version in readme.txt & $MAINFILE don't match. Exiting...."; exit 1; fi
 
 echo "Versions match in readme.txt and $MAINFILE. Let's proceed..."
 
 if git show-ref --tags --quiet --verify -- "refs/tags/$NEWVERSION1"
-	then 
-		echo "Version $NEWVERSION1 already exists as git tag. Exiting...."; 
-		exit 1; 
+	then
+		echo "Version $NEWVERSION1 already exists as git tag. Exiting....";
+		exit 1;
 	else
 		echo "Git version does not exist. Let's proceed..."
 fi
@@ -61,7 +61,7 @@ echo "Pushing latest commit to origin, with tags"
 git push origin master
 git push origin master --tags
 
-echo 
+echo
 echo "Creating local copy of SVN repo ..."
 svn co $SVNURL $SVNPATH
 
